@@ -5,7 +5,7 @@ Static first draft for modernizing [cookpianoservice.com](https://www.cookpianos
 ## What is included
 
 - Mobile-friendly one-page marketing site
-- Generated hero image in `assets/hero-piano-service.png`
+- Owner-provided piano and logo imagery prepared for web use
 - Schedule/contact form that opens an email draft
 - Google Analytics placeholder script
 - No build step or paid hosting requirement

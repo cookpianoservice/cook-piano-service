@@ -15,7 +15,7 @@
       content="Touch, tone, delivered. Expert piano care with over 25 years of experience."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./assets/hero-piano-service.png" />
+    <meta property="og:image" content="./assets/piano-tuning-pins.jpg" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
 
@@ -31,6 +31,7 @@
   <body>
     <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="Cook Piano Service home">
+        <img src="./assets/logo-mark-ink.png" alt="" />
         <span>Cook Piano Service</span>
         <svg viewBox="0 0 160 18" aria-hidden="true">
           <path d="M2 9h60m36 0h60" />
@@ -49,13 +50,14 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <img src="./assets/hero-piano-service.png" alt="Piano technician tuning a grand piano" />
+        <img src="./assets/piano-tuning-pins.jpg" alt="Piano tuning tool inside a grand piano" />
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
           <p class="eyebrow">Piano tuning, repair, and care</p>
           <h1 id="hero-title">Touch, tone, delivered.</h1>
           <p class="hero-copy">
-            Expert piano care with over 25 years of experience. Trusted service for the music you love.
+            Expert piano care in Carson City and surrounding Michigan communities, with over 25 years
+            of experience and trusted Google-reviewed service.
           </p>
           <div class="service-strip" aria-label="Featured services">
             <span>
@@ -85,6 +87,7 @@
         </div>
         <div class="service-grid">
           <article class="service-feature">
+            <img class="service-photo" src="./assets/piano-tuning-pins.jpg" alt="Close-up of piano tuning pins" />
             <div>
               <span class="icon-ring">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m-5 0a5 5 0 0 0 10 0" /><path d="M7 3v10m10-10v10" /></svg>
@@ -94,6 +97,7 @@
             </div>
           </article>
           <article class="service-feature">
+            <img class="service-photo" src="./assets/piano-hammer-detail.jpg" alt="Piano action and hammer detail" />
             <div>
               <span class="icon-ring">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5L8 21H3v-5L14 5Z" /><path d="m12 7 5 5" /></svg>
@@ -103,6 +107,7 @@
             </div>
           </article>
           <article class="service-feature">
+            <img class="service-photo" src="./assets/piano-string-macro.jpg" alt="Piano strings and plate detail" />
             <div>
               <span class="icon-ring">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C8 8 6 11 6 15a6 6 0 0 0 12 0c0-4-2-7-6-12Z" /></svg>
@@ -139,23 +144,56 @@
         </div>
       </section>
 
-      <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
+      <section class="gallery section" aria-labelledby="gallery-title">
         <div class="section-heading compact">
-          <p class="eyebrow">What clients say</p>
-          <h2 id="reviews-title">Reliable care, clearly communicated.</h2>
+          <p class="eyebrow">Inside the instrument</p>
+          <h2 id="gallery-title">Real work, real instruments, real care.</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="wide">
+            <img src="./assets/piano-workshop-action.jpg" alt="Open upright piano action during service" />
+          </figure>
+          <figure>
+            <img src="./assets/piano-grand-repair.jpg" alt="Grand piano action and hammers exposed" />
+          </figure>
+          <figure>
+            <img src="./assets/piano-hammer-detail.jpg" alt="Detailed view of piano hammers and keys" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
+        <div class="reviews-heading">
+          <div>
+            <p class="eyebrow">Google reviews</p>
+            <h2 id="reviews-title">Local piano owners hear the difference.</h2>
+          </div>
+          <a
+            class="review-source"
+            href="https://www.google.com/search?q=Cook+Piano+Service+Reviews"
+            target="_blank"
+            rel="noopener"
+          >
+            <strong>9 Google reviews</strong>
+            <span>Read on Google</span>
+          </a>
         </div>
         <div class="review-grid">
           <blockquote>
-            <p>Nathan did an incredible job tuning our piano. The difference in sound and touch is remarkable.</p>
-            <cite>Karen S.</cite>
+            <p>Mr. Cook fixed a broken string on my piano and gave it a much needed tuning.</p>
+            <cite>J. H. on Google</cite>
           </blockquote>
           <blockquote>
-            <p>Reliable, thorough, and honest. He took time to explain everything and our piano sounds better.</p>
-            <cite>Michael T.</cite>
+            <p>Excellent service! Does great work with very fair prices.</p>
+            <cite>CWH on Google</cite>
           </blockquote>
           <blockquote>
-            <p>We trust Cook Piano Service completely. Our piano is well cared for year after year.</p>
-            <cite>Amy R.</cite>
+            <p>Our piano sounds amazing after being tuned by Mr. Cook.</p>
+            <cite>Joann Case on Google</cite>
+          </blockquote>
+          <blockquote>
+            <p>Prompt, professional, courteous!</p>
+            <cite>Gayle Sims on Google</cite>
           </blockquote>
         </div>
       </section>
@@ -218,7 +256,7 @@
 
     <footer class="footer">
       <div>
-        <strong>Cook Piano Service</strong>
+        <img class="footer-logo" src="./assets/logo-cook-piano-white.png" alt="Cook Piano Service" />
         <span>&copy; 2026 Cook Piano Service. All rights reserved.</span>
       </div>
       <nav aria-label="Footer navigation">

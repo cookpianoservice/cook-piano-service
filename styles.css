@@ -56,7 +56,9 @@ a {
 
 .brand {
   display: inline-grid;
-  gap: 4px;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 4px 12px;
   width: max-content;
   color: var(--ink);
   font-family: var(--serif);
@@ -64,10 +66,16 @@ a {
   line-height: 1;
 }
 
+.brand img {
+  width: 46px;
+  height: 46px;
+  grid-row: 1 / 3;
+}
+
 .brand svg {
   width: 160px;
   height: 18px;
-  justify-self: center;
+  justify-self: start;
   fill: none;
   stroke: var(--brass);
   stroke-width: 1.4;
@@ -131,7 +139,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% center;
+  object-position: 60% center;
   transform: scale(1.03);
   animation: settle 1400ms ease both;
 }
@@ -307,6 +315,8 @@ svg {
 }
 
 .service-grid article {
+  position: relative;
+  overflow: hidden;
   min-height: 154px;
   border: 1px solid var(--line);
   background: rgba(255, 250, 244, 0.72);
@@ -321,9 +331,41 @@ svg {
 }
 
 .service-feature {
-  min-height: 236px;
+  min-height: 320px;
   display: flex;
   align-items: flex-end;
+  color: var(--paper-2);
+}
+
+.service-feature::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(24, 51, 40, 0.03), rgba(24, 51, 40, 0.78));
+  content: "";
+}
+
+.service-feature > div {
+  position: relative;
+  z-index: 2;
+}
+
+.service-feature h3,
+.service-feature p {
+  color: var(--paper-2);
+}
+
+.service-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 480ms ease;
+}
+
+.service-feature:hover .service-photo {
+  transform: scale(1.045);
 }
 
 .icon-ring {
@@ -334,7 +376,7 @@ svg {
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--paper-2);
+  background: rgba(255, 250, 244, 0.9);
   color: var(--brass);
 }
 
@@ -363,7 +405,7 @@ svg {
   background:
     linear-gradient(90deg, rgba(247, 241, 233, 0) 64%, var(--paper-2) 100%),
     linear-gradient(0deg, rgba(24, 51, 40, 0.3), rgba(24, 51, 40, 0)),
-    url("./assets/hero-piano-service.png") center / cover;
+    url("./assets/piano-workshop-action.jpg") center / cover;
 }
 
 .about-copy {
@@ -374,11 +416,89 @@ svg {
   padding: clamp(44px, 7vw, 88px) clamp(26px, 7vw, 92px);
 }
 
+.gallery {
+  background: var(--paper);
+}
+
+.gallery-grid {
+  display: grid;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+.gallery-grid figure {
+  min-height: 280px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+}
+
+.gallery-grid figure.wide {
+  grid-row: span 2;
+  min-height: 576px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.035);
+}
+
+.reviews-heading {
+  display: grid;
+  width: min(1020px, 100%);
+  margin: 0 auto 28px;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+}
+
+.reviews-heading h2 {
+  max-width: 650px;
+  margin-bottom: 0;
+}
+
+.review-source {
+  display: grid;
+  min-width: 180px;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 18px 20px;
+  text-align: right;
+}
+
+.review-source strong,
+.review-source span {
+  display: block;
+}
+
+.review-source strong {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.review-source span {
+  color: var(--brass-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .review-grid {
   display: grid;
   width: min(1020px, 100%);
   margin: 0 auto;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -522,15 +642,14 @@ textarea {
   padding: 26px clamp(20px, 6vw, 90px);
 }
 
-.footer strong,
 .footer span {
   display: block;
 }
 
-.footer strong {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 500;
+.footer-logo {
+  width: 178px;
+  height: auto;
+  margin-bottom: 8px;
 }
 
 .footer span {
@@ -606,7 +725,9 @@ textarea {
   .review-grid,
   .contact,
   .about,
-  .trust-band {
+  .trust-band,
+  .gallery-grid,
+  .reviews-heading {
     grid-template-columns: 1fr;
   }
 
@@ -616,6 +737,16 @@ textarea {
 
   .about-copy {
     max-width: none;
+  }
+
+  .gallery-grid figure,
+  .gallery-grid figure.wide {
+    min-height: 300px;
+  }
+
+  .review-source {
+    width: 100%;
+    text-align: left;
   }
 
   .trust-band div {
@@ -640,15 +771,23 @@ textarea {
   }
 
   .brand {
-    font-size: 1.45rem;
+    font-size: 1.18rem;
+    gap: 2px 8px;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
   }
 
   .brand svg {
-    width: 118px;
+    width: 96px;
+    height: 12px;
   }
 
   .header-call {
-    font-size: 0.78rem;
+    padding: 7px 8px;
+    font-size: 0.74rem;
   }
 
   .hero {
@@ -709,6 +848,10 @@ textarea {
   .service-grid article,
   blockquote {
     padding: 24px 22px;
+  }
+
+  .service-feature {
+    min-height: 270px;
   }
 
   .schedule-form {
