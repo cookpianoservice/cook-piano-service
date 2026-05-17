@@ -423,7 +423,7 @@ svg {
   background:
     linear-gradient(90deg, rgba(247, 241, 233, 0) 64%, var(--paper-2) 100%),
     linear-gradient(0deg, rgba(24, 51, 40, 0.3), rgba(24, 51, 40, 0)),
-    url("./assets/piano-workshop-action.jpg") center / cover;
+    url("./assets/piano-action-open.jpg") center / cover;
 }
 
 .about-copy {
