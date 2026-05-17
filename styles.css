@@ -133,11 +133,15 @@ a {
 }
 
 .header-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--line);
   padding: 8px 13px;
   color: var(--ink);
   font-size: 0.86rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .hero {
@@ -850,8 +854,20 @@ textarea {
   }
 
   .header-call {
-    padding: 7px 8px;
-    font-size: 0.74rem;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .header-call::before {
+    width: 19px;
+    height: 19px;
+    background: currentColor;
+    content: "";
+    mask:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8 9.77a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92Z'/%3E%3C/svg%3E")
+      center / contain no-repeat;
   }
 
   .hero {
