@@ -99,9 +99,13 @@ if (form) {
       message
     ].join("\n");
 
-    const mailto = new URL("mailto:cookpianoservice@gmail.com");
-    mailto.searchParams.set("subject", `Piano service request from ${name}`);
-    mailto.searchParams.set("body", body);
-    window.location.href = mailto.toString();
+    const subject = `Piano service request from ${name}`;
+    const mailto = [
+      "mailto:cookpianoservice@gmail.com",
+      `?subject=${encodeURIComponent(subject)}`,
+      `&body=${encodeURIComponent(body)}`
+    ].join("");
+
+    window.location.href = mailto;
   });
 }
